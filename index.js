@@ -1,4 +1,6 @@
-var letras = "Quieres",
+var frases=["Ay:(","Estas segura?","Piensalo otra vez","Me romperas el corazon","Por favor","No me hagas esto","No es opcional;)"]
+let con=0
+var letras = "Quieres ser mi rukaleta",
         oracion = ""
         letras=letras.split(""),
         c=0
@@ -16,11 +18,16 @@ var letras = "Quieres",
             agregar()
         }, 500);
         function mover() {
-            
+            if (con==frases.length) {
+                document.getElementById('no').style.display='none'
+                
+            }
             let top = numero(280),
             left = numero(490)
             no.style.top=top+'px'
             no.style.left=left+'px'
+            no.value=frases[con]
+            con++
         }
         function numero(max) {
         let masmenos=Math.round(Math.random())
@@ -28,6 +35,6 @@ var letras = "Quieres",
         max = -50
         }
             var re = Math.round(Math.random()*max);
-            console.log(re);
+            //console.log(re);
             return re
         }
